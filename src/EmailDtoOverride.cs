@@ -8,7 +8,7 @@ namespace Soenneker.AutoFaker.Overrides.Emails;
 /// <summary>
 /// An AutoFaker (AutoBogus) override for the DTO EmailDto
 /// </summary>
-public class EmailDtoOverride : AutoFakerOverride<EmailDto>
+public sealed class EmailDtoOverride : AutoFakerOverride<EmailDto>
 {
     public override void Generate(AutoFakerOverrideContext context)
     {
