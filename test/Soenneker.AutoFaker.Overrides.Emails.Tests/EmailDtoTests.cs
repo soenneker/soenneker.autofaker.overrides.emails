@@ -1,11 +1,10 @@
-﻿using Soenneker.Tests.Unit;
-using Xunit;
+using Soenneker.Tests.Unit;
 
 namespace Soenneker.AutoFaker.Overrides.Emails.Tests;
 
 public sealed class EmailDtoTests : UnitTest
 {
-    [Fact]
+    [Test]
     public void Default()
     {
 
