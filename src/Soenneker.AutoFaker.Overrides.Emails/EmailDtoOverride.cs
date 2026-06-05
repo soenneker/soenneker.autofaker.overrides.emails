@@ -10,6 +10,10 @@ namespace Soenneker.AutoFaker.Overrides.Emails;
 /// </summary>
 public sealed class EmailDtoOverride : AutoFakerOverride<EmailDto>
 {
+    /// <summary>
+    /// Executes the generate operation.
+    /// </summary>
+    /// <param name="context">The context.</param>
     public override void Generate(AutoFakerOverrideContext context)
     {
         var target = (context.Instance as EmailDto)!;
