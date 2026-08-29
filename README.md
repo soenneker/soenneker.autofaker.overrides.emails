@@ -5,14 +5,25 @@
 
 # Soenneker.AutoFaker.Overrides.Emails
 
-An AutoFaker (AutoBogus) override for the DTO EmailDto.
+An AutoFaker override that produces a populated `EmailDto` suitable for tests and fixtures.
 
-## Install
+## Installation
 
 ```bash
 dotnet add package Soenneker.AutoFaker.Overrides.Emails
 ```
 
-## What you get
+## Usage
 
-- `EmailDtoOverride` — An AutoFaker (AutoBogus) override for the DTO EmailDto.
+```csharp
+using Soenneker.AutoFaker.Overrides.Emails;
+using Soenneker.Dtos.Email;
+using Soenneker.Utils.AutoBogus;
+
+var autoFaker = new AutoFaker();
+autoFaker.Config.Overrides = [new EmailDtoOverride()];
+
+EmailDto email = autoFaker.Generate<EmailDto>();
+```
+
+The result always has a `To` recipient, reply-to address, sender name and address, subject, body, and a randomly selected `EmailFormat`. `Cc` and `Bcc` are independently optional. Values are synthetic Bogus data; they are not intended for delivery.
